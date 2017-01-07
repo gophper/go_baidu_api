@@ -1,38 +1,41 @@
-# README.md
+# 百度推广API（Golang）
 
-#百度报告更新
+##Install`go_baidu_api`
 
-1.获取所有用户的所有的百度账户信息
+	go get github.com/nanjishidu/go_baidu_api/...
 
-  + 获取所有账户平台信息
-  + 获取 账户对用户名密码token
+##Import `go_baidu_api`
 
-2.更新账户报告数据
-
-参数－－－  账户信息  账户ID 以及开始时间和结束时间
-
-3.根据设备 不同对  账户account  计划campaign 单元adgroup 关键词keyword 创意  以及  Location 和 Location_L2 表进行入库
-
-
+	import baiduapi "github.com/nanjishidu/go_baidu_api/v4"
+		
+##字段说明
+```
 performanceData = []string{"cost", "cpc", "click", "impression", "ctr", "cpm","position" ,"conversion"}
+
 startDate 开始时间
+
 endDate  结束时间
+
 idOnly  选填;默认为 false 取值范围: true:只获取 id false:既获取 id 也获取字面
 levelOfDetails  统计粒度 
+
 Attributes  选填; 目前仅地域报告和搜索词报告使用了该 字段,若为 NULL 表示统计全部地域。 key:provid ; value:地域代码数组
 
 format 选填,默认值为 2;
-reportType  报告类型 必填; 2:账户报告 10:计划报告 11:单元报告 14:关键词报告(keywordid)报告 12:创意报告 15:配对报告 3:地域报告 6:搜索词报告
-						 9:关键词报告(wordid) 5:二级地域报告 38:历史数据排名报告
+
+reportType  报告类型 必填; 2:账户报告 10:计划报告 11:单元报告 14:关键词报告(keywordid)报告 12:创意报告 15:配对报告 3:地域报告 6:搜索词报告9:关键词报告(wordid) 5:二级地域报告 38:历史数据排名报告
+
 statRange 统计范围
-选填,默认值为 2; 2:账户范围
+选填,默认值为 2; 
+2:账户范围
 3:计划范围
 5:单元范围
-7:创意范围 11:关键词(keywordid)范围 6:关键词(wordid)范围
+7:创意范围 
+11:关键词(keywordid)范围 
+6:关键词(wordid)范围
 注意:统计范围不能细于当前的统计粒
 度,例如统计粒度为计划,则统计范围
 不能细到单元
-
 
 unitOfTime 选填,默认值为 5 取值范围: 5:日报
 4:周报
@@ -122,5 +125,6 @@ LevelOfDetails = 11
 PerformanceData = []string{"rank1shows", "rank2shows", "rank3shows", "rank1to3shows", "rank1to3ratio",  "rank1to8shows", "rank1to8ratio","rank4to8shows"}
 
 附注:移动设备不能请求 rank4to8shows 绩效数据
+```
 
 
